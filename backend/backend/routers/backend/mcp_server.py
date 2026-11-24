@@ -3,7 +3,8 @@ from mcp.server.fastmcp import FastMCP
 
 from backend.mcp_tools import (
     check_medicine_access,
-    get_caresync_status
+    get_caresync_status,
+    calculate_refill_days
 )
 from backend.permissions import evaluate_permission
 
@@ -41,6 +42,18 @@ def caresync_status() -> dict:
     """Get basic CARESYNC service information."""
 
     return get_caresync_status()
+
+@mcp.tool()
+def estimate_medicine_refill(
+    stock_count: int,
+    units_used_per_day: float
+) -> dict:
+    """Estimate how long the recorded medicine stock may last."""
+
+    return calculate_refill_days(
+        stock_count,
+        units_used_per_day
+    )
 
 
 if __name__ == "__main__":
