@@ -1,19 +1,19 @@
 
 from mcp.server.fastmcp import FastMCP
 
+from backend.mcp_tools import (
+    check_medicine_access,
+    get_caresync_status
+)
 from backend.permissions import evaluate_permission
 
-# Create CARESYNC MCP server
 mcp = FastMCP("CARESYNC")
 
 
 @mcp.tool()
 def check_action_permission(action: str) -> dict:
-    """
-    Check whether a requested action is ALLOW, ASK, or BLOCK.
+    """Check whether an action is ALLOW, ASK, or BLOCK."""
 
-    This tool only checks permission. It does not execute the action.
-    """
     decision = evaluate_permission(action)
 
     return {
@@ -27,6 +27,20 @@ def check_action_permission(action: str) -> dict:
             else "This action is blocked."
         )
     }
+
+
+@mcp.tool()
+def check_medicine_permission(action: str) -> dict:
+    """Check permission for a medicine-related action."""
+
+    return check_medicine_access(action)
+
+
+@mcp.tool()
+def caresync_status() -> dict:
+    """Get basic CARESYNC service information."""
+
+    return get_caresync_status()
 
 
 if __name__ == "__main__":
