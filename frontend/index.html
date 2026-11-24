@@ -16,7 +16,6 @@
 
         <nav>
             <a href="login.html">Login / Register</a>
-
             <button onclick="logoutUser(); window.location.href='login.html';">
                 Logout
             </button>
@@ -28,6 +27,9 @@
         <section class="welcome">
             <h2>Welcome to CARESYNC</h2>
             <p>Your family care and daily assistance dashboard.</p>
+            <p id="backend-status" role="status">
+                Checking connection...
+            </p>
         </section>
 
         <section class="feature-grid">
@@ -35,54 +37,52 @@
             <article class="feature-card">
                 <h3>Medicine Tracker</h3>
                 <p>Keep track of medicine stock and refill estimates.</p>
-                <button onclick="showMessage('Medicine Tracker')">
-                    Open
-                </button>
+                <a href="medicines.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
             <article class="feature-card">
                 <h3>Appointments</h3>
                 <p>Organize appointments and reminders.</p>
-                <button onclick="showMessage('Appointments')">
-                    Open
-                </button>
+                <a href="appointments.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
             <article class="feature-card">
                 <h3>Family Coordination</h3>
                 <p>Connect with family members and manage requests.</p>
-                <button onclick="showMessage('Family Coordination')">
-                    Open
-                </button>
+                <a href="family.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
             <article class="feature-card">
-                <h3>AI Assistant</h3>
+                <h3>CARESYNC Assistant</h3>
                 <p>Get help navigating CARESYNC features.</p>
-                <button onclick="showMessage('AI Assistant')">
-                    Open
-                </button>
+                <a href="assistant.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
             <article class="feature-card">
                 <h3>Approval Requests</h3>
                 <p>Review actions that require family approval.</p>
-                <button onclick="showMessage('Approval Requests')">
-                    Open
-                </button>
+                <a href="approvals.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
             <article class="feature-card">
                 <h3>Activity Log</h3>
                 <p>View recorded activities and updates.</p>
-                <button onclick="showMessage('Activity Log')">
-                    Open
-                </button>
+                <a href="activity.html">
+                    <button type="button">Open</button>
+                </a>
             </article>
 
         </section>
-
-        <p id="message" role="status"></p>
 
     </main>
 
