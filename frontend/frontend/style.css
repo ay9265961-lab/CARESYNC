@@ -9,12 +9,15 @@ body {
     font-family: Arial, sans-serif;
     background: #f3f6fb;
     color: #263449;
+    line-height: 1.6;
 }
+
+/* Header */
 
 .topbar {
     background: #173b67;
     color: white;
-    padding: 28px 8%;
+    padding: 25px 8%;
 }
 
 .topbar h1 {
@@ -23,9 +26,28 @@ body {
 }
 
 .topbar p {
-    margin-top: 8px;
+    margin-top: 6px;
     color: #dce8f5;
 }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 16px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main dashboard */
 
 .dashboard {
     width: 84%;
@@ -46,6 +68,8 @@ body {
     margin-bottom: 8px;
 }
 
+/* Feature cards */
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -65,10 +89,10 @@ body {
 }
 
 .feature-card p {
-    line-height: 1.5;
     color: #64748b;
-    min-height: 48px;
 }
+
+/* Buttons */
 
 button {
     margin-top: 18px;
@@ -78,20 +102,77 @@ button {
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 button:hover {
     background: #174a7b;
 }
 
-#message {
-    margin-top: 24px;
+/* Forms */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #334155;
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #2366a5;
+    border-color: #2366a5;
+}
+
+/* Messages */
+
+#message,
+#login-message,
+#register-message {
+    margin-top: 18px;
     color: #173b67;
     font-weight: bold;
 }
+
+/* Footer */
 
 footer {
     text-align: center;
     padding: 22px;
     color: #64748b;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 22px 6%;
+    }
+
+    .dashboard {
+        width: 90%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
 }
