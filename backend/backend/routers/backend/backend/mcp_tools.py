@@ -24,3 +24,30 @@ def get_caresync_status() -> dict:
         "status": "operational",
         "permission_system": "ALLOW / ASK / BLOCK"
     }
+
+
+
+def calculate_refill_days(
+    stock_count: int,
+    units_used_per_day: float
+) -> dict:
+    """Estimate how many days the recorded stock may last."""
+
+    if stock_count < 0:
+        return {"error": "Stock count cannot be negative."}
+
+    if units_used_per_day <= 0:
+        return {"error": "Daily usage must be greater than zero."}
+
+    days_remaining = stock_count / units_used_per_day
+
+    return {
+        "stock_count": stock_count,
+        "estimated_days_remaining": round(days_remaining, 1),
+        "message": (
+            f"Recorded stock may last approximately "
+            f"{round(days_remaining, 1)} days."
+        ),
+        "note": "Inventory estimate only; follow the prescribed schedule."
+    }
+
