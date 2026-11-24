@@ -1,3 +1,4 @@
+
 # CARESYNC - Python Dependencies
 
 # Backend framework
@@ -6,6 +7,10 @@ uvicorn[standard]
 
 # Database
 sqlalchemy
+
+# Data validation
+pydantic
+email-validator
 
 # MCP integration
 mcp[cli]
