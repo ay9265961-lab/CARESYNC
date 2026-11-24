@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC | Medicine Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>CARESYNC</h1>
+        <p>Medicine Stock Tracker</p>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="login.html">Login</a>
+            <button onclick="logoutUser(); window.location.href='login.html';">
+                Logout
+            </button>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h2>Medicine Tracker</h2>
+            <p>View recorded medicine stock and monitor inventory.</p>
+        </section>
+
+        <section class="feature-card">
+            <h3>Your Medicines</h3>
+
+            <button id="load-medicines">
+                Refresh Medicine List
+            </button>
+
+            <p id="medicine-message" role="status"></p>
+
+            <div id="medicine-list"></div>
+        </section>
+
+        <p style="margin-top: 20px;">
+            Stock information is for inventory tracking only.
+            Always follow the instructions provided by a qualified
+            healthcare professional.
+        </p>
+
+    </main>
+
+    <script src="api.js"></script>
+    <script src="medicines.js"></script>
+
+</body>
+</html>
