@@ -1,0 +1,27 @@
+# CARESYNC - Python Dependencies
+
+# Backend framework
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+
+# MCP integration
+mcp[cli]
+
+# Scheduling and environment configuration
+apscheduler
+python-dotenv
+
+# Authentication and security
+pyjwt
+pwdlib[argon2]
+
+# Document handling
+python-multipart
+pypdf
+
+# Testing and code quality
+pytest
+ruff
