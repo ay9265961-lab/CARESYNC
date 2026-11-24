@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC | Approval Requests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>CARESYNC</h1>
+        <p>Secure Family Approvals</p>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="family.html">Family Coordination</a>
+            <a href="login.html">Login</a>
+            <button onclick="logoutUser(); window.location.href='login.html';">
+                Logout
+            </button>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h2>Approval Requests</h2>
+            <p>Review actions that require authorized family approval.</p>
+        </section>
+
+        <section class="feature-card">
+            <h3>Pending Requests</h3>
+
+            <button id="load-approvals">
+                Refresh Requests
+            </button>
+
+            <div id="approval-list"></div>
+
+            <p id="approval-message" role="status"></p>
+        </section>
+
+        <section class="welcome" style="margin-top: 20px;">
+            <h3>CARESYNC Permission Policy</h3>
+            <p><strong>ALLOW:</strong> Safe, pre-authorized actions.</p>
+            <p><strong>ASK:</strong> Actions requiring family approval.</p>
+            <p><strong>BLOCK:</strong> Prohibited or unsafe actions.</p>
+            <p>Family approval cannot override a BLOCK decision.</p>
+        </section>
+
+    </main>
+
+    <script src="api.js"></script>
+    <script src="approvals.js"></script>
+
+</body>
+</html>
