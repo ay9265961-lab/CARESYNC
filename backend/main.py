@@ -1,5 +1,6 @@
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -8,7 +9,7 @@ load_dotenv()
 # Database setup
 from backend.database import Base, engine
 
-# Import models so all database tables are registered
+# Import models so database tables are registered
 from backend import models
 
 # Import API routers
@@ -32,6 +33,19 @@ app = FastAPI(
         "and family coordination platform."
     ),
     version="0.1.0"
+)
+
+
+# Enable communication with the local frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
 )
 
 
