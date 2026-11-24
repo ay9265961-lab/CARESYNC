@@ -70,3 +70,33 @@ class ActivityLog(Base):
     decision = Column(String(20), nullable=False)
     details = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class FamilyLink(Base):
+    __tablename__ = "family_links"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    elderly_user_id = Column(
+        Integer,
+        ForeignKey("users.id"),
+        nullable=False
+    )
+
+    family_user_id = Column(
+        Integer,
+        ForeignKey("users.id"),
+        nullable=False
+    )
+
+    status = Column(
+        String(30),
+        nullable=False,
+        default="pending"
+    )
+
+    created_at = Column(
+        DateTime(timezone=True),
+        server_default=func.now()
+    )
+
