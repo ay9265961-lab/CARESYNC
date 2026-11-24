@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <h1>CARESYNC</h1>
+        <p>Because caring should be connected, simple and secure.</p>
+    </header>
+
+    <main class="dashboard">
+        <section class="welcome">
+            <h2>Welcome back!</h2>
+            <p>Login to access your CARESYNC account.</p>
+        </section>
+
+        <section class="feature-card">
+            <h3>Login</h3>
+
+            <form id="login-form">
+                <label for="login-email">Email</label>
+                <input id="login-email" type="email" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="login-message" role="status"></p>
+        </section>
+
+        <section class="feature-card" style="margin-top: 20px;">
+            <h3>Create an account</h3>
+
+            <form id="register-form">
+                <label for="register-name">Full name</label>
+                <input id="register-name" type="text" required>
+
+                <label for="register-email">Email</label>
+                <input id="register-email" type="email" required>
+
+                <label for="register-password">Password</label>
+                <input id="register-password" type="password" minlength="8" required>
+
+                <label for="register-role">Account type</label>
+                <select id="register-role" required>
+                    <option value="elderly">Elderly user</option>
+                    <option value="family">Family member</option>
+                    <option value="caregiver">Caregiver</option>
+                </select>
+
+                <button type="submit">Create account</button>
+            </form>
+
+            <p id="register-message" role="status"></p>
+        </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

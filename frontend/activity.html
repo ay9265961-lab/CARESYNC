@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC | Activity Log</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>CARESYNC</h1>
+        <p>Activity and Security History</p>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="family.html">Family</a>
+            <a href="approvals.html">Approvals</a>
+            <a href="login.html">Login</a>
+            <button onclick="logoutUser(); window.location.href='login.html';">
+                Logout
+            </button>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h2>Activity Log</h2>
+            <p>Review recorded activities and permission decisions.</p>
+        </section>
+
+        <section class="feature-card">
+
+            <h3>Recent Activities</h3>
+
+            <button id="load-activity">
+                Refresh Activity
+            </button>
+
+            <div id="activity-list"></div>
+
+            <p id="activity-message" role="status"></p>
+
+        </section>
+
+        <section class="welcome" style="margin-top: 20px;">
+            <h3>Security and Transparency</h3>
+            <p>CARESYNC records important actions and approval decisions
+                to support transparent family coordination.</p>
+        </section>
+
+    </main>
+
+    <script src="api.js"></script>
+    <script src="activity.js"></script>
+
+</body>
+</html>
