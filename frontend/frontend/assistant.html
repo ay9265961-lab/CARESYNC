@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC - Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CARESYNC Assistant</h1>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="medicines.html">Medicines</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="family.html">Family</a>
+            <a href="approvals.html">Approvals</a>
+            <a href="activity.html">Activity</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>How can I help you?</h2>
+            <p>
+                Ask me how to use CARESYNC or find a feature.
+            </p>
+
+            <form id="assistant-form">
+                <label for="assistant-input">Your message</label>
+                <textarea
+                    id="assistant-input"
+                    rows="4"
+                    placeholder="Example: How do I check my medicines?"
+                    required
+                ></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div id="assistant-response" class="card" aria-live="polite">
+                Your assistant is ready to help.
+            </div>
+        </section>
+
+        <p>
+            <strong>Important:</strong>
+            CARESYNC provides navigation and general app assistance.
+            It does not provide medical diagnosis, prescriptions,
+            or dosage recommendations.
+        </p>
+    </main>
+
+    <script src="assistant.js"></script>
+</body>
+</html>
