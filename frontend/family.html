@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARESYNC | Family Coordination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>CARESYNC</h1>
+        <p>Family Coordination</p>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="medicines.html">Medicines</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="login.html">Login</a>
+            <button onclick="logoutUser(); window.location.href='login.html';">
+                Logout
+            </button>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h2>Family Coordination</h2>
+            <p>Connect family members and manage access requests securely.</p>
+        </section>
+
+        <section class="feature-card">
+            <h3>Request a Family Connection</h3>
+
+            <form id="family-request-form">
+                <label for="elderly-user-id">
+                    Elderly User ID
+                </label>
+
+                <input
+                    type="number"
+                    id="elderly-user-id"
+                    min="1"
+                    required
+                    placeholder="Enter the user's account ID"
+                >
+
+                <button type="submit">
+                    Send Connection Request
+                </button>
+            </form>
+
+            <p id="family-request-message" role="status"></p>
+        </section>
+
+        <section class="feature-card" style="margin-top: 20px;">
+            <h3>Pending Family Requests</h3>
+
+            <button id="load-family-requests">
+                Refresh Requests
+            </button>
+
+            <div id="family-request-list"></div>
+            <p id="family-list-message" role="status"></p>
+        </section>
+
+    </main>
+
+    <script src="api.js"></script>
+    <script src="family.js"></script>
+
+</body>
+</html>
